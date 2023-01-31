@@ -1,0 +1,19 @@
+---
+apiVersion: v1-alpha
+kind: AwsProfileBasedAuthentication
+metadata:
+  name: test-aws-credentials
+spec:
+  profile_name: test_profile
+  region: eu-central-1
+---
+apiVersion: v1-alpha
+kind: AwsInfrastructureAccount
+metadata:
+  environments:
+  - sandbox
+  name: sandbox-account
+spec:
+  authenticationReference: test-aws-credentials
+  provider: AWS
+

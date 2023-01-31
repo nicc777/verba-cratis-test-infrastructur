@@ -1,0 +1,19 @@
+---
+apiVersion: v1-alpha
+kind: SshPrivateKeyBasedAuthenticationConfig
+metadata:
+  name: test-user@test-host-1
+spec:
+  authenticationType: SshUsingPrivateKey
+  privateKeyPath: /tmp/test-key-for-test-host-1.pem
+---
+apiVersion: v1-alpha
+kind: UnixInfrastructureAccount
+metadata:
+  environments:
+  - default
+  name: host1
+spec:
+  authenticationReference: test-user@test-host-1
+  provider: ShellScript
+
