@@ -12,6 +12,7 @@ kind: AwsInfrastructureAccount
 metadata:
   environments:
   - sandbox
+  - sandbox2
   name: sandbox-account
 spec:
   authenticationReference: test-aws-credentials
